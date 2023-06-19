@@ -1,0 +1,55 @@
+.container {
+    display: table;
+    width: 100%;
+}
+
+header {
+    font-size: 30px;
+    /* text-align: center; */
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.main {
+    font-family: cantarell;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-wrapper {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.buttons-row {
+    border-spacing: 20px;
+}
+
+
+.wii-button {
+    width: 150px;
+    height: 60px;
+    border: 3px solid #315cfd;
+    border-radius: 45px;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wii-button:hover {
+    border-color: #E64011;
+}
+
+.wii-button:focus {
+    outline: none;
+}
+
+.wii-button:active {
+    background: #E64011;
+    color: white;
+}

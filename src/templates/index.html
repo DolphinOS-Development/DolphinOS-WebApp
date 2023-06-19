@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style_main.css') }}">
+    <title>Pagina de prueba</title>
+</head>
+<body>
+    <div class ="container">
+        <header>DolphinOS WebApp</header>
+    </div>
+    <br>
+    <br>
+    <div class="main">
+        <div class="table-wrapper">
+            <table class="buttons-row">
+                <tr>
+                    <td>
+                        <form action="/poweroff/">
+                            <input type="submit" value="Power Off" class="wii-button" />
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/reboot/">
+                            <input type="submit" value="Reboot" class="wii-button" />
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div> 
+</body>
+</html>
