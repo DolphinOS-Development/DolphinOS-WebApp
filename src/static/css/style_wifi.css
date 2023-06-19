@@ -5,37 +5,44 @@
 
 header {
     font-size: 30px;
-    /* text-align: center; */
     display: table-cell;
     text-align: center;
     vertical-align: middle;
 }
 
-.main {
-    font-family: cantarell;
-    display: table;
+
+form {
+    margin-top: 20px;
+}
+
+.form-container {
+    width: 50%; 
     margin-left: auto;
     margin-right: auto;
 }
 
-.table-wrapper {
-    display: table-cell;
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select, input[type="password"], input[type="submit"] {
+    margin-bottom: 10px;
+}
+
+.button-container {
+    width: 100%;
     text-align: center;
-    vertical-align: middle;
+    margin-top: 50px;
 }
-
-table.buttons-row {
-    border-spacing: 20px;
-}
-
 
 .wii-button {
-    width: 150px;
-    height: 60px;
+    width: 70px;
+    height: 30px;
     border: 3px solid #315cfd;
     cursor: pointer;
     background: white;
-    font-size: 1.2em;
+    font-size: 14px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
 }
@@ -51,4 +58,8 @@ table.buttons-row {
 .wii-button:active {
     background: #E64011;
     color: white;
+}
+
+p.conn_info {
+    font-size: 14px;
 }

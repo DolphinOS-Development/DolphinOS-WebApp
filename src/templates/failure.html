@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection failed</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_wifi.css') }}">
+</head>
+<body>
+    <div class ="container">
+        <header>Connection failed</header>
+    </div>
+    <br>
+    <div class="form-container">
+        <p class="conn_info">Maybe the password is wrong, or the signal strength is too weak</p>      
+        <div class="button-container">
+            <form action="/wifi">
+                <input type="submit" value="Return" class="wii-button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

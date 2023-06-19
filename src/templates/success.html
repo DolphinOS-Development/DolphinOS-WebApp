@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection successful</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_wifi.css') }}">
+</head>
+<body>
+    <div class ="container">
+        <header>Connection successful</header>
+    </div>
+    <br>
+    <div class="form-container">
+        <p class="conn_info">Connected to: {{ ssid }}</p>
+        <p class="conn_info">IP Address: {{ ip_address }}</p>
+        
+        <div class="button-container">
+            <form action="/">
+                <input type="submit" value="Return" class="wii-button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

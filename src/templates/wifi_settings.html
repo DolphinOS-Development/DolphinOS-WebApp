@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WiFi networks</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_wifi.css') }}">
+</head>
+<body>
+    <div class ="container">
+        <header>WiFi Network Settings</header>
+    </div>
+    <div class="form-container">
+
+        {% if conn_name != None: %}
+            <br>
+            <p>
+                Now connected to: {{ conn_name }}
+                <br>
+                IP Address: {{ ip_address }} 
+            </p>
+        {% endif %}
+
+        <form action="/connect" method="post" class="form-inline">
+            <label for="ssid">Select a WiFi Network:</label>
+            <select id="ssid" name="ssid">
+                {% for network in networks %}
+                <option value="{{ network['ssid'] }}">{{ network['ssid'] }}</option>
+                {% endfor %}
+            </select>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        
+            <input type="submit" value="Connect">
+        </form>
+        <div class="button-container">
+            <form action="/">
+                <input type="submit" value="Return" class="wii-button">
+            </form>
+        </div>       
+    </div>
+</body>
+</html>
