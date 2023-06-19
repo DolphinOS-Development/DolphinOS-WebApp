@@ -25,6 +25,7 @@ def reboot():
 @app.route('/wifi/')
 def wifi_settings():
     info = nmcli.device.show_all()
+    connection_info = None
     for connection in info:
       if connection.get('GENERAL.DEVICE') == 'wlo1':
           connection_info = connection
@@ -32,9 +33,10 @@ def wifi_settings():
     
     conn_name = None
     ip_address = None
-    if connection_info.get('GENERAL.STATE') == '100 (connected)':
-      conn_name = connection_info.get('GENERAL.CONNECTION')
-      ip_address = connection_info.get('IP4.ADDRESS[1]')
+    if connection_info != None:
+      if connection_info.get('GENERAL.STATE') == '100 (connected)':
+        conn_name = connection_info.get('GENERAL.CONNECTION')
+        ip_address = connection_info.get('IP4.ADDRESS[1]')
 
     networks = nmcli.device.wifi()
     return render_template('wifi_settings.html', networks=networks, conn_name=conn_name, ip_address=ip_address)
