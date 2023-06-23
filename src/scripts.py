@@ -69,3 +69,35 @@ def open_and_run_dolphin():
     print('Running dolphin command!')
     subprocess.run(["gamemoderun", "mangohud", "dolphin-emu", "-b", "-n", "0000000100000002"])
     return "Command executed successfully"
+
+def replace_line_in_file(file_path, old_line, new_line):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    with open(file_path, 'w') as file:
+        for line in lines:
+            if line.startswith(old_line):
+                file.write(new_line + '\n')
+            else:
+                file.write(line)
+
+def load_game(directory, filename):
+    end_dolphin()
+    #sleep(10)
+    global dolphin_process
+
+    if dolphin_process is not None and dolphin_process.poll() is None:
+        return "Dolphin is already running"
+
+    print("Setting Dolphin default ISO!")
+    default_iso = "DefaultISO = "
+    full_filepath = directory + "/" + filename
+    new_default_iso = "DefaultISO = " + full_filepath
+    dolphin_cfg_file = "/home/dolphinos/.config/dolphin-emu/Dolphin.ini"
+    print(new_default_iso)
+    replace_line_in_file(dolphin_cfg_file, default_iso, new_default_iso)
+
+
+    print('Rerunning dolphin!')
+    subprocess.run(["gamemoderun", "mangohud", "dolphin-emu", "-b", "-n", "0000000100000002"])
+    return "Command executed successfully"

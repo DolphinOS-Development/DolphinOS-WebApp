@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Loader</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_webman.css') }}">
+</head>
+<body>
+    <div class ="container">
+        <header>Game Loader</header>
+    </div>
+    <div class="form-container">
+
+        {% for file in files %}
+            <li><a href="{{ url_for('game_loader', filename=file) }}">{{ file }}</a></li>
+        {% endfor %}
+   
+    </div>
+</body>
+</html>

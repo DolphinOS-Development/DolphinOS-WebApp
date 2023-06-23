@@ -1,6 +1,8 @@
+import os
 import scripts
 from flask import Flask, render_template, request, redirect, url_for
 import nmcli
+import glob
 
 
 app = Flask(__name__)
@@ -67,6 +69,41 @@ def open_dolphin():
   print ('Opening dolphin!')
   scripts.end_dolphin()
   return scripts.open_and_run_dolphin()
+
+@app.route('/webman')
+def webman():
+  print ('Loading webman!')
+  directory_pattern = '/run/media/dolphinos/*/Games'
+  directories = glob.glob(directory_pattern)
+  if len(directories) > 0:
+    directory = directories[0]
+    files = files = [file for file in os.listdir(directory) if file.lower().endswith(('.iso', '.wbfs'))]
+    return render_template('webman.html', files=files)
+  else:
+    return '''
+        <script>
+            alert('Please connect a USB mass storage device');
+            window.location.href = "/";
+        </script>
+        '''
+
+@app.route('/game_loader/<filename>')
+def game_loader(filename):
+  print ('Loading ' + filename + ' !')
+  directory_pattern = '/run/media/dolphinos/*/Games'
+  directories = glob.glob(directory_pattern)
+  if len(directories) > 0:
+    directory = directories[0]
+    print(directory)
+    print(filename)
+    return scripts.load_game(directory, filename)
+  else:
+    return '''
+        <script>
+            alert('Please connect a USB mass storage device');
+            window.location.href = "/";
+        </script>
+        '''
 
 if __name__ == '__main__':
   app.run(debug=True)
