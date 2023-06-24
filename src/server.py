@@ -78,7 +78,7 @@ def webman():
   directories = glob.glob(directory_pattern)
   if len(directories) > 0:
     directory = directories[0]
-    files = files = [file for file in os.listdir(directory) if file.lower().endswith(('.iso', '.wbfs'))]
+    files = files = [file for file in os.listdir(directory) if file.lower().endswith(('.iso', '.wbfs', '.rvz'))]
     return render_template('webman.html', files=files)
   else:
     return '''
