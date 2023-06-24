@@ -39,8 +39,8 @@ form {
 }
 
 .disk {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -59,7 +59,7 @@ td {
 }
 
 p {
-    font-size: 13px;
+    font-size: 14px;
     margin: 0;
 }
 
