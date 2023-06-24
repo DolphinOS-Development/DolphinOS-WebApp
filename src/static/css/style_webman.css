@@ -23,8 +23,8 @@ form {
 
 .table-container {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center;
+    align-items: center;
 }
 
 .inner-table {
@@ -32,7 +32,6 @@ form {
 }
 
 .link {
-    /*list-style-type: none;*/
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -40,12 +39,12 @@ form {
 }
 
 .disk {
-    width: 80px; /* Tamaño fijo para la imagen */
-    height: 80px; /* Tamaño fijo para la imagen */
+    width: 80px;
+    height: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    object-fit: contain; /* Para mantener la relación de aspecto de la imagen */
+    object-fit: contain;
 }
 
 .isoname {
