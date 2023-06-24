@@ -9,11 +9,41 @@
         <header>Game Loader</header>
     </div>
     <div class="form-container">
-
-        {% for file in files %}
-            <li><a href="{{ url_for('game_loader', filename=file) }}">{{ file }}</a></li>
-        {% endfor %}
-   
+        <table class="table-container">
+            {% for file in files %}
+                {% if loop.index0 % 4 == 0 %}
+                    <tr>
+                {% endif %}
+                <td>
+                    <table class="inner-table">
+                        <tr>
+                            <td>
+                                <a href="{{ url_for('game_loader', filename=file) }}">
+                                    <img class="disk" src="{{ url_for('static', filename='images/WiiDiskC.png') }}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="{{ url_for('game_loader', filename=file) }}">
+                                    <p class="isoname">
+                                        {{ file }}
+                                    </p>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                {% if loop.index % 4 == 3 or loop.last %}
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
     </div>
+    <div class="button-container">
+        <form action="/">
+            <input type="submit" value="Return" class="wii-button">
+        </form>
+    </div>   
 </body>
 </html>

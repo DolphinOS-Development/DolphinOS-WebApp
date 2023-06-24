@@ -74,6 +74,7 @@ def open_dolphin():
 def webman():
   print ('Loading webman!')
   directory_pattern = '/run/media/dolphinos/*/Games'
+  #directory_pattern = '/run/media/jesusxd88/*/Games'
   directories = glob.glob(directory_pattern)
   if len(directories) > 0:
     directory = directories[0]
@@ -91,6 +92,7 @@ def webman():
 def game_loader(filename):
   print ('Loading ' + filename + ' !')
   directory_pattern = '/run/media/dolphinos/*/Games'
+  #directory_pattern = '/run/media/jesusxd88/*/Games'
   directories = glob.glob(directory_pattern)
   if len(directories) > 0:
     directory = directories[0]

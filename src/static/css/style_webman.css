@@ -10,24 +10,62 @@ header {
     vertical-align: middle;
 }
 
-
 form {
     margin-top: 20px;
 }
 
 .form-container {
-    width: 50%; 
+    width: 60%; 
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
 }
 
-label {
+.table-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.inner-table {
+    width: 100%;
+}
+
+.link {
+    /*list-style-type: none;*/
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    margin-bottom: 5px;
 }
 
-select, input[type="submit"] {
-    margin-bottom: 10px;
+.disk {
+    width: 80px; /* Tamaño fijo para la imagen */
+    height: 80px; /* Tamaño fijo para la imagen */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain; /* Para mantener la relación de aspecto de la imagen */
+}
+
+.isoname {
+    text-align: center;
+    word-wrap: break-word;
+}
+
+td {
+    width: 25%;
+    vertical-align: top;
+    padding: 5px;
+}
+
+p {
+    font-size: 13px;
+    margin: 0;
+}
+
+a {
+    color: rgb(252, 34, 143);
 }
 
 .button-container {
@@ -58,8 +96,4 @@ select, input[type="submit"] {
 .wii-button:active {
     background: #E64011;
     color: white;
-}
-
-p.conn_info {
-    font-size: 14px;
 }
